@@ -1,11 +1,13 @@
 import { useState } from "react";
+import Navbar from "./components/navbar";
+import Root from "./routes/root";
 
 import "./App.css";
 
 function App() {
   return (
     <>
-      <h1>Explore Latin America</h1>
+      <div></div>
     </>
   );
 }

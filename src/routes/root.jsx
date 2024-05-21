@@ -1,14 +1,29 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 import Navbar from "../components/navbar";
+
+import "../index.css";
 
 export default function Root() {
   return (
-    <div>
+    <section id="navbar">
       <Navbar />
-      <div className="container mt-4">
-        <Outlet />
-      </div>
-    </div>
+
+      {/* <nav>
+        <ul id="nav-list">
+          <li className="nav-item">
+            <a href="/home">Home</a>
+          </li>
+          <li className="nav-item">
+            <a href="/list">Countries</a>
+          </li>
+          <li className="nav-item">
+            <a href="/population">Populations</a>
+          </li>
+          <li className="nav-item">
+            <a href="/languages">Languages</a>
+          </li>
+        </ul>
+      </nav> */}
+    </section>
   );
 }

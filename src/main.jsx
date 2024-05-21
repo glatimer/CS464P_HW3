@@ -13,7 +13,7 @@ import List from "./routes/list.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <Home />,
     errorElement: <ErrorPage />,
   },
   {

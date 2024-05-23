@@ -5,10 +5,10 @@ import App from "./App.jsx";
 import Root from "./routes/root.jsx";
 import "./index.css";
 import ErrorPage from "./routes/error-page.jsx";
-import Home from "./routes/home.jsx";
-import Population from "./routes/population.jsx";
-import Languages from "./routes/languages.jsx";
-import List from "./routes/list.jsx";
+import Home from "./routes/home-page.jsx";
+import Population from "./routes/population-page.jsx";
+import Languages from "./routes/language-page.jsx";
+import List from "./routes/list-page.jsx";
 
 const router = createBrowserRouter([
   {

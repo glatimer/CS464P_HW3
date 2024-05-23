@@ -30,7 +30,6 @@ export default function BarChart() {
 
   return (
     <div>
-      <h2>Population Bar Chart</h2>
       <Bar data={data} />
     </div>
   );

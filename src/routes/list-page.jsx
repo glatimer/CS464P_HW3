@@ -3,7 +3,6 @@ import Root from "./root";
 import useFetchData from "../components/fetchData";
 
 export default function List() {
-  // fetchAPI to get data
   const { countries, loading } = useFetchData();
   if (loading) {
     <div>

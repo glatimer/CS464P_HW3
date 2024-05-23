@@ -10,12 +10,24 @@ export default function Languages() {
   }
 
   // map through the api making an array of official_languages, no duplicates
+  const duplicates = countries.map((country) => country.official_languages);
+  const languages = countries
+    .map((country) => country.Languages)
+    .filter(...duplicates);
 
-  const languages = countries.map((country) => country.population);
+  console.log(languages);
   return (
     <div>
-      <h1>Languages of Latin America</h1>
       <Root />
+
+      <h1>Languages of Latin America</h1>
+      <ul>
+        {languages.map((language, index) => (
+          <li key={index}>
+            <p>{language}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

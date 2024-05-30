@@ -10,10 +10,13 @@ export default function Languages() {
   }
 
   // map through the api making an array of official_languages, no duplicates
-  const duplicates = countries.map((country) => country.official_languages);
+  // function duplicates(current) {
+  //   if (current === ...duplicate) return false;
+  // }
+  const duplicate = countries.map((country) => country.official_languages);
   const languages = countries
     .map((country) => country.Languages)
-    .filter(...duplicates);
+    .filter(duplicates(country.official_languages));
 
   console.log(languages);
   return (

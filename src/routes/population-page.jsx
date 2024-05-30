@@ -1,6 +1,6 @@
 import React from "react";
 import Root from "./root";
-import BarChart from "../components/population-chart";
+import BarChart from "../components/barChart";
 
 export default function Population() {
   return (

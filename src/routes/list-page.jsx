@@ -15,11 +15,6 @@ export default function List() {
       <div>
         <h1>Countries of Latin America</h1>
         <Root />
-        <p>
-          This route should show a list of the countries of Latin America, their
-          flags, and information about each country.
-        </p>
-
         <main className="container">
           <div className="grid">
             {countries.map((country) => (

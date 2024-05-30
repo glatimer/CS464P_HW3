@@ -1,33 +1,12 @@
-import React from "react";
 import Root from "./root";
-import useFetchData from "../components/fetchData";
-export default function Languages() {
-  const { countries, loading } = useFetchData();
-  if (loading) {
-    <div>
-      <p>Loading...</p>
-    </div>;
-  }
+import DoughnutChart from "../components/doughnutChart";
 
-  // map through the api making an array of official_languages, no duplicates
-  const duplicates = countries.map((country) => country.official_languages);
-  const languages = countries
-    .map((country) => country.Languages)
-    .filter(...duplicates);
-
-  console.log(languages);
+export default function LanguagesChart() {
   return (
     <div>
+      <h1>Language Data of Latin America</h1>
       <Root />
-
-      <h1>Languages of Latin America</h1>
-      <ul>
-        {languages.map((language, index) => (
-          <li key={index}>
-            <p>{language}</p>
-          </li>
-        ))}
-      </ul>
+      <DoughnutChart />
     </div>
   );
 }

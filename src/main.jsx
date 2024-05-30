@@ -9,27 +9,28 @@ import Home from "./routes/home-page.jsx";
 import Population from "./routes/population-page.jsx";
 import Languages from "./routes/language-page.jsx";
 import List from "./routes/list-page.jsx";
+import "bootstrap/dist/css/bootstrap.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Root />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/list",
+    path: "list/",
     element: <List />,
   },
   {
-    path: "/home",
+    path: "home/",
     element: <Home />,
   },
   {
-    path: "/population",
+    path: "population/",
     element: <Population />,
   },
   {
-    path: "/languages",
+    path: "languages/",
     element: <Languages />,
   },
 ]);

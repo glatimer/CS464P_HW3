@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import Root from "./root";
 import DoughnutChart from "../components/doughnutChart";
 

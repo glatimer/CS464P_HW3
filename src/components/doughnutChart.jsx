@@ -45,7 +45,7 @@ export default function DoughnutChart() {
     return () => {
       doughnutChart.destroy();
     };
-  }, [loading, countries]);
+  }, [loading, countries, langCount]);
 
   if (loading) {
     return (

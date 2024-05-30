@@ -1,12 +1,12 @@
 import useFetchData from "./fetchData";
 import { backgroundColors, borderColors } from "../utils/chartColors";
-import { Chart } from "chart.js";
+import Chart from "chart.js/auto";
 
 import { useEffect } from "react";
 
 export default function BarChart() {
   const { countries, loading } = useFetchData();
-  ``;
+
   // Async: wait to render the chart
   useEffect(() => {
     // Collect data for Bar chart
@@ -48,7 +48,6 @@ export default function BarChart() {
   return (
     <div>
       <canvas id="barChart" width="1000" height="600"></canvas>
-      {/* <Bar data={data} /> */}
     </div>
   );
 }

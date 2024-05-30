@@ -3,18 +3,30 @@ import useFetchData from "./fetchData";
 import { backgroundColors, borderColors } from "../utils/chartColors";
 import { useEffect } from "react";
 
-export default function BarChart() {
+export default function DoughnutChart() {
   const { countries, loading } = useFetchData();
+
+  // Collect language count
+  const langCount = {};
+  countries.forEach((country) => {
+    country.official_languages.forEach((lang) => {
+      if (langCount[lang]) {
+        langCount[lang] += 1;
+      } else {
+        langCount[lang] = 1;
+      }
+    });
+  });
 
   // Async: wait to render the chart
   useEffect(() => {
-    // Collect data for Bar chart
+    // Collect data for Doughnut chart
     const data = {
-      labels: countries.map((country) => country.name),
+      labels: Object.keys(langCount),
       datasets: [
         {
-          label: "Population",
-          data: countries.map((country) => country.population),
+          label: "Languages",
+          data: Object.values(langCount),
           backgroundColor: backgroundColors,
           borderColor: borderColors,
           borderWidth: 1,
@@ -23,15 +35,15 @@ export default function BarChart() {
     };
 
     const config = {
-      type: `bar`,
+      type: `doughnut`,
       data: data,
       options: {},
     };
 
-    const ctx = document.querySelector("#barChart");
-    const barChart = new Chart(ctx, config);
+    const ctx = document.querySelector("#doughnutChart");
+    const doughnutChart = new Chart(ctx, config);
     return () => {
-      barChart.destroy();
+      doughnutChart.destroy();
     };
   }, [loading, countries]);
 
@@ -42,10 +54,9 @@ export default function BarChart() {
       </div>
     );
   }
-
   return (
     <div>
-      <canvas id="barChart" width="1000" height="600"></canvas>
+      <canvas id="doughnutChart" width="1000" height="600"></canvas>
     </div>
   );
 }
